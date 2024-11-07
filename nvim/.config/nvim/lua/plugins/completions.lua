@@ -46,8 +46,8 @@ return {
                     documentation = cmp.config.window.bordered(),
                 },
                 mapping = cmp.mapping.preset.insert({
-                    --["C-k"] = cmp.mapping.select_prev_item(),
-                    --["C-j"] = cmp.mapping.select_next_item(),
+                    -- ["<Up>"] = cmp.mapping.select_prev_item(),
+                    -- ["<Down>"] = cmp.mapping.select_next_item(),
                     --["C-b"] = cmp.mapping.scroll_docs(-4),
                     --["C-f"] = cmp.mapping.scroll_docs(4),
                     --["C-Space"] = cmp.mapping.complete(),
@@ -86,10 +86,10 @@ return {
                     end),
                 }),
                 sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
+                    { name = "nvim_lsp", priority = 1000 },
                     { name = "luasnip" }, -- For luasnip users.
-                    { name = "buffer" },
-                    { name = "path" },
+                    { name = "buffer",   priority = 500, group_index = 2 },
+                    { name = "path",     priority = 250 },
                     {
                         name = "lazydev",
                         group_index = 0, -- set group index to 0 to skip loading LuaLS completions

@@ -30,7 +30,6 @@ return {
                     "delve",
                     "goimports",
                     "stylua",
-                    "golangci-lint",
                 },
             })
 

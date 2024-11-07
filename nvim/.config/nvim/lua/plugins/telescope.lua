@@ -25,9 +25,11 @@ return {
 				},
 			})
 
-            telescope.load_extension("fzf")
+			telescope.load_extension("fzf")
 
-			vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Telescope: Find files" })
+			vim.keymap.set("n", "<C-p>", function()
+				builtin.find_files({ hidden = true, no_ignore = true })
+			end, { desc = "Telescope: Find files" })
 			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Telescope: Old files" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: Live grep" })
 		end,

@@ -13,6 +13,7 @@ return {
 
 		neotree.setup({
 			close_if_last_window = true,
+			auto_clean_after_session_restore = true,
 			default_component_configs = {
 				icon = {
 					folder_closed = "",
@@ -26,6 +27,9 @@ return {
 						unstaged = "",
 					},
 				},
+			},
+			filesystem = {
+				follow_current_file = true,
 			},
 		})
 

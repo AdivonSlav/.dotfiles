@@ -60,6 +60,8 @@ alias dnf-update="sudo dnf update --refresh"
 alias run-backup="sh $HOME/Documents/Tools/backup.sh"
 alias ltr="ls -latr"
 alias gf="git fuzzy"
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 
 # Git
 alias gst="git status"

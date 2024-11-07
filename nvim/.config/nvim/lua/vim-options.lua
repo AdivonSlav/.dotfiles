@@ -21,9 +21,6 @@ vim.opt.swapfile = false
 
 vim.g.omni_sql_no_default_maps = 1
 
--- So auto-session behaves.
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
 -- Use the system clipboard.
 --vim.cmd("set clipboard+=unnamedplus")
 
@@ -46,17 +43,17 @@ vim.keymap.set({ "n", "x" }, "<leader>p", '"+p', { desc = "General: Paste from s
 vim.keymap.set("n", "Q", "<nop>", { desc = "General: just to prevent bad things from happening", silent = true })
 
 vim.keymap.set(
-	"n",
-	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "General: Search and replace under cursor" }
+    "n",
+    "<leader>s",
+    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "General: Search and replace under cursor" }
 )
 
 vim.keymap.set(
-	{ "i", "n", "v" },
-	"<C-C>",
-	"<esc>",
-	{ desc = "General: Make Ctrl+C behave exactly like escape", silent = true }
+    { "i", "n", "v" },
+    "<C-C>",
+    "<esc>",
+    { desc = "General: Make Ctrl+C behave exactly like escape", silent = true }
 )
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "General: Clear search highlights" })
@@ -64,9 +61,9 @@ vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "General: Clear search h
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Window: Split vertically" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Window: Make splits equal size" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Window: Close current split" })
-vim.keymap.set("n", "<A-h>", "<C-w>h", { desc = "Window: Move to left split" })
-vim.keymap.set("n", "<A-l>", "<C-w>l", { desc = "Window: Move to right split" })
+-- vim.keymap.set("n", "<A-h>", "<C-w>h", { desc = "Window: Move to left split" })
+-- vim.keymap.set("n", "<A-l>", "<C-w>l", { desc = "Window: Move to right split" })
 
 vim.keymap.set("n", "x", '"_x', { desc = "General: Delete character without copying ", silent = true })
-
 vim.keymap.set("v", "p", '"_dP', { desc = "General: Keep last yanked when pasting", silent = true })
+vim.keymap.set("n", "dd", '"_dd', { desc = "General: Delete line without copying ", silent = true })
